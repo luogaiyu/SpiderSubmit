@@ -2,15 +2,17 @@
 import json
 import os
 from datetime import datetime
+import configparser
 env = os.environ.get('APP_ENV','dev')
 
 # 加载对应环境的配置文件
-with open(f'config/{env}.json', 'r') as f:
-    config = json.load(f)
+config = configparser.ConfigParser()
+config.read(f'config/{env}.ini')
 
+OUTPUT_DIR = config['DEFAULT']['OUTPUT_DIR']
 
 today = datetime.today()
-OUTPUT_DIR = 'D:\Desktop\workRelated\chatgpt\pythonProject1\code\data\img\\' + str(today.year) +"_" + str(today.month) +"_" + str(today.day) + "_" +str(today.hour)  +  "\\"
+OUTPUT_DIR = OUTPUT_DIR + str(today.year) +"_" + str(today.month) +"_" + str(today.day) + "_" +str(today.hour)  +  "\\"
 HEADERS = {
             "Authority": "www.midjourney.com",
             "Method": "GET",
