@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # 爬取对应的数据
 import json
 import threading
@@ -91,7 +92,7 @@ if __name__ == '__main__':
     start_time = time.time()
     # 使用多线程
     for i in range(10):
-        t = threading.Thread(target=start,args=(i*10, (i+1)*10))
+        t = threading.Thread(target=sm.start,args=(i*10, (i+1)*10))
         threads.append(t)
         t.start()
 

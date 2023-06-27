@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # 小红书上传对应的图片到 平台上
 import threading
 

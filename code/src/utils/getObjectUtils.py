@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # 获取不同的对象
 import os
 import time

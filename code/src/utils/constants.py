@@ -1,4 +1,14 @@
+# -*- coding: utf-8 -*-
+import json
+import os
 from datetime import datetime
+env = os.environ.get('APP_ENV','dev')
+
+# 加载对应环境的配置文件
+with open(f'config/{env}.json', 'r') as f:
+    config = json.load(f)
+
+
 today = datetime.today()
 OUTPUT_DIR = 'D:\Desktop\workRelated\chatgpt\pythonProject1\code\data\img\\' + str(today.year) +"_" + str(today.month) +"_" + str(today.day) + "_" +str(today.hour)  +  "\\"
 HEADERS = {
