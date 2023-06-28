@@ -1,0 +1,2 @@
+%(levelname)s - %(message)s - %(asctime)s 
+ERROR - This is a debug message - 2023-05-30 22:57:45,869 

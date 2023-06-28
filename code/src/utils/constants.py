@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import json
 import os
+import sys
 from datetime import datetime
 import configparser
 env = os.environ.get('APP_ENV','dev')
@@ -9,6 +10,9 @@ env = os.environ.get('APP_ENV','dev')
 config = configparser.ConfigParser()
 config.read(f'config/{env}.ini')
 
+parent_path = os.path.dirname(os.path.dirname(os.path.dirname(os.getcwd())))
+config.read(parent_path + '\\' + f'config\\{env}.ini')
+print("读取配置文件的路径 == " + parent_path + '\\' + f'config\\{env}.ini')
 OUTPUT_DIR = config['DEFAULT']['OUTPUT_DIR']
 
 today = datetime.today()
